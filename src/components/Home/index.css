@@ -126,6 +126,7 @@
 
 .radio-box-book {
   display: flex;
+  align-items: center;
 }
 .Quadratic {
   color: black;
@@ -183,7 +184,19 @@
   border: none;
   border-radius: 6px;
   color: white;
+  opacity: 0.5;
 }
 .link-text {
   text-decoration: none;
+}
+.syllabus-btn {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.pattern-container {
+  padding-left: 0px;
+  margin: 0px;
+  list-style: none;
 }

@@ -14,7 +14,7 @@
   background-color: transparent;
 }
 .option-1 {
-  font-size: 10px;
+  font-size: 16px;
   font-family: 'Roboto';
   font-weight: 800;
   border-radius: 30px;
@@ -22,12 +22,17 @@
   padding-right: 10px;
   padding-bottom: 10px;
   padding-top: 10px;
+  background-color: grey;
+  border-radius: 30px;
+  height: 40px;
+  width: 40px;
 }
 .option-background {
   color: black;
   font-size: 16px;
   font-family: 'Roboto';
   font-weight: 800;
+  margin-left: 27px;
 }
 .option-selected-name {
   border: 2px solid blue;
@@ -39,15 +44,109 @@
   cursor: pointer;
   outline: none;
   border: none;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: #66b3b3;
+  color: white;
   border-radius: 4px;
 }
 .next-btn {
   cursor: pointer;
   outline: none;
   border: none;
-  padding-left: 4px;
-  padding-right: 4px;
+
+  background-color: #1065de;
+
+  border-radius: 4px;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.previous-next-button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.option-answer-container {
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  border-radius: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  border-radius: 30px;
+  height: 40px;
+  width: 40px;
+}
+.color-text {
+  color: white;
+}
+.without-color {
+  color: black;
+}
+.next-hight-name {
+  opacity: 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  background-color: #1065de;
+
+  border-radius: 4px;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 0.5;
+}
+.no-highlight-name {
+  cursor: pointer;
+  outline: none;
+  border: none;
+
+  background-color: #1065de;
+
+  border-radius: 4px;
+  color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.no-prev-name {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 0.5;
+
+  background-color: #66b3b3;
+  color: white;
+  border-radius: 4px;
+}
+.prev-highlight {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: #66b3b3;
+  color: white;
   border-radius: 4px;
 }

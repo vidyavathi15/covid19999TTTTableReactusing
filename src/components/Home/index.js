@@ -1,6 +1,5 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
-
 import {
   AiOutlineQuestionCircle,
   AiTwotoneCalendar,
@@ -110,23 +109,30 @@ class Home extends Component {
   onClickSyllabus = () => {
     this.setState((prevState) => ({
       isSyllabusClicked: !prevState.isSyllabusClicked,
+      isInstructionClicked: false,
+      isMarkingSchemaClicked: false,
     }))
   }
 
   onClickMarkingSchema = () => {
     this.setState((prevState) => ({
       isMarkingSchemaClicked: !prevState.isMarkingSchemaClicked,
+
+      isSyllabusClicked: false,
+      isInstructionClicked: false,
     }))
   }
 
   onClickInstructions = () => {
     this.setState((prevState) => ({
       isInstructionClicked: !prevState.isInstructionClicked,
+      isSyllabusClicked: false,
+      isMarkingSchemaClicked: false,
     }))
   }
 
   onChangeTermsCheckBox = () => {
-    this.setState((prevState) => ({isCheckedTerms: prevState.isCheckedTerms}))
+    this.setState((prevState) => ({isCheckedTerms: !prevState.isCheckedTerms}))
   }
 
   render() {
@@ -165,7 +171,6 @@ class Home extends Component {
               <p className="total-time-minutes">180 min</p>
             </div>
           </div>
-
           <AiFillAndroid />
         </div>
         <ul className="pattern-container">
@@ -176,7 +181,6 @@ class Home extends Component {
           >
             <li className="syllabus-of-test">Syllabus</li>
           </button>
-
           {isSyllabusClicked ? this.renderAllAnswerTypes() : null}
           <button
             type="button"
@@ -185,7 +189,6 @@ class Home extends Component {
           >
             <li className="syllabus-of-test">Marking Schema</li>
           </button>
-
           {isMarkingSchemaClicked ? this.renderMarkingSchemaDetails() : null}
           <button
             type="button"
@@ -194,8 +197,8 @@ class Home extends Component {
           >
             <li className="syllabus-of-test">Instructions</li>
           </button>
-
           {isInstructionClicked ? this.renderInstructionDetails() : null}
+          <hr />
         </ul>
         <hr />
         <div className="check-box-container">
