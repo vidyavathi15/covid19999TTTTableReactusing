@@ -241,7 +241,7 @@ class StartTest extends Component {
           </div>
           <div className="answer-type-review">
             <div className="question-nbr">
-              <p className="question-box">{multipleQuestionsList.id}</p>
+              <p className="question-box">{singleQuestionItem.id}</p>
               <p className="single-test-top-head">Single Answer Type</p>
             </div>
 

@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
+
 import {
   AiOutlineQuestionCircle,
   AiTwotoneCalendar,
@@ -62,12 +63,12 @@ class Home extends Component {
         <p className="Quadratic">Quadratic Equations</p>
       </div>
       <div className="radio-box-book">
+        <MdScience />
         <input type="radio" className="radio-btn" />
         <p className="Quadratic">Trigonometry</p>
       </div>
 
       <div className="radio-box-book">
-        <MdScience />
         <p className="maths-text">Physics</p>
       </div>
 
