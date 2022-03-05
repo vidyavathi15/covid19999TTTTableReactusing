@@ -1,0 +1,184 @@
+.android-big-image {
+  height: 50vh;
+  width: 50vh;
+  margin-left: 20vh;
+}
+.result-bg-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.result-name {
+  color: lightskyblue;
+  font-size: 40px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  padding: 20px;
+}
+.top-result {
+  display: flex;
+  align-items: center;
+}
+.result-score-cont {
+  display: flex;
+  align-items: center;
+  border-radius: 100%;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 30px;
+  border: 3px solid lightskyblue;
+}
+.marks-scored-gre {
+  color: green;
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+.total-out-blue {
+  color: lightskyblue;
+  font-size: 27px;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+.schema-cont {
+  display: flex;
+
+  flex-direction: column;
+}
+.each-schema {
+  display: flex;
+  align-items: center;
+}
+.result-display {
+  height: 2vh;
+  width: 2vh;
+}
+.marks-scored {
+  color: lightcoral;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  margin-left: 20px;
+}
+.marks-green {
+  color: green;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 800;
+}
+.marks-violet {
+  color: blue;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 800;
+}
+
+.marks-yellow {
+  color: yellow;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 800;
+}
+.table {
+  border: 2px solid grey;
+  width: 20vw;
+  margin-top: 50px;
+}
+.ul-subject {
+  padding-left: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  background-color: grey;
+}
+.heading {
+  list-style-type: none;
+  color: black;
+  font-weight: 800;
+  font-family: 'Roboto';
+  font-size: 20px;
+  margin: 40px;
+}
+.subjects-marks-ul {
+  padding-left: 0px;
+  margin: 0px;
+}
+.names-sub-table-blue {
+  list-style-type: none;
+  color: lightblue;
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  width: 10vw;
+
+  margin: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.score-each {
+  color: black;
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 800;
+
+  width: 20vw;
+  margin-left: 160px;
+  margin-right: 30px;
+}
+
+.score-each-2 {
+  color: black;
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  margin-left: 145px;
+}
+.score-each-3 {
+  color: black;
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 800;
+
+  width: 20vw;
+  margin-left: 120px;
+}
+
+.names-sub-red {
+  list-style-type: none;
+  color: red;
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  width: 25vw;
+  margin-right: 100px;
+  margin-left: 20px;
+}
+.names-sub-light {
+  list-style-type: none;
+  color: lightcoral;
+  font-size: 17px;
+  font-family: 'Roboto';
+  font-weight: 800;
+
+  margin: 20px;
+  width: 19vw;
+}
+.overall {
+  display: flex;
+  flex-direction: column;
+}
+.marks-green {
+  color: green;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Roboto';
+}
+.marks-scored-gree {
+  color: green;
+  font-size: 27px;
+  font-weight: 800;
+  font-family: 'Roboto';
+}

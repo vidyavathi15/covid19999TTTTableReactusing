@@ -1,6 +1,6 @@
 import './index.css'
 
-const QuestionItem = (props) => {
+const SpecificNumberItemDetails = (props) => {
   const {
     questionDetails,
     selectOption,
@@ -133,4 +133,4 @@ const QuestionItem = (props) => {
   )
 }
 
-export default QuestionItem
+export default SpecificNumberItemDetails

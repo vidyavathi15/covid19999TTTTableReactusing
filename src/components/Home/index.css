@@ -8,7 +8,7 @@
   justify-content: space-between;
 }
 .text-name {
-  font-size: 16px;
+  font-size: 36px;
   font-family: 'Roboto';
   font-weight: 800;
   color: crimson;
@@ -98,6 +98,7 @@
 .single-answer-type {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 .single-answer-heading {
   color: black;
@@ -113,6 +114,7 @@
 .maths-bg-container {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 .book-container {
   display: flex;
@@ -120,8 +122,9 @@
 }
 .maths-text {
   color: black;
-  font-size: 13px;
+  font-size: 20px;
   font-family: 'Roboto';
+  font-weight: 800;
 }
 
 .radio-box-book {
@@ -136,6 +139,7 @@
 .instructions-bg-details {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 .instructions-heading {
   color: green;
@@ -199,4 +203,7 @@
   padding-left: 0px;
   margin: 0px;
   list-style: none;
+}
+.border-color {
+  border-bottom: 2px solid crimson;
 }

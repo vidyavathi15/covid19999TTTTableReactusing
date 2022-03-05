@@ -1,57 +1,117 @@
 import {GiAlarmClock} from 'react-icons/gi'
 
+import NumberItem from '../NumberItem'
+
 import './index.css'
 
+const answerSheetNumbersList = [
+  {
+    sheetId: 1,
+    number: '01',
+  },
+  {
+    sheetId: 2,
+    number: '02',
+  },
+  {
+    sheetId: 3,
+    number: '03',
+  },
+  {
+    sheetId: 4,
+    number: '04',
+  },
+  {
+    sheetId: 5,
+    number: '05',
+  },
+  {
+    sheetId: 6,
+    number: '06',
+  },
+  {
+    sheetId: 7,
+    number: '07',
+  },
+  {
+    sheetId: 8,
+    number: '08',
+  },
+  {
+    sheetId: 9,
+    number: '09',
+  },
+  {
+    sheetId: 10,
+    number: '10',
+  },
+  {
+    sheetId: 11,
+    number: '11',
+  },
+  {
+    sheetId: 12,
+    number: '12',
+  },
+  {
+    sheetId: 13,
+    number: '13',
+  },
+  {
+    sheetId: 14,
+    number: '14',
+  },
+
+  {
+    sheetId: 15,
+    number: '15',
+  },
+  {
+    sheetId: 16,
+    number: '16',
+  },
+]
+
 const RightBar = (props) => {
-  const getAnsweredItems = () => {
-    const {multipleQuestionsList} = props
-    const isOptionSelectedItems = multipleQuestionsList.map(
-      (each) => each.isOptionClicked === true,
-    )
-
-    return isOptionSelectedItems
-  }
-
-  const getNotAnsweredQuestions = (isOptionSelectedItems) => {
-    const {multipleQuestionsList} = props
-    const notAnsweredItems =
-      multipleQuestionsList.length - isOptionSelectedItems.length
-
-    return notAnsweredItems
-  }
-
-  const {initialSeconds} = props
-
-  const isOptionSelectedItems = getAnsweredItems()
-
-  const notAnsweredQuestions = getNotAnsweredQuestions(isOptionSelectedItems)
+  const {
+    initialSeconds,
+    answeredList,
+    answeredAndReviewList,
+    notAnsweredAndReviewedList,
+    noneAnsweredList,
+    singleItemDetailsForRightBar,
+  } = props
 
   return (
     <div className="right-bar-bg-container">
       <div className="clock-timer-container">
-        <GiAlarmClock />
+        <GiAlarmClock className="clock-timer" />
         <p className="timer-count">{initialSeconds}</p>
       </div>
       <div className="boxes-options">
         <div className="answer-color">
-          <p className="answer-right-bar">{isOptionSelectedItems.length}</p>
+          <p className="answer-right-bar">{answeredList.length}</p>
           <p className="answer-right-text">Answered</p>
         </div>
       </div>
 
       <div className="answer-color">
-        <p className="not-answer-right-bar">{notAnsweredQuestions}</p>
+        <p className="not-answer-right-bar">{noneAnsweredList}</p>
         <p className="not-answer-right-text">Not Answered</p>
       </div>
 
       <div className="answer-color">
-        <p className="marked-answer-right-bar">{}</p>
+        <p className="marked-answer-right-bar">
+          {answeredAndReviewList.length}
+        </p>
 
         <p className="marked-answer-right-text">Answered & Marked for Review</p>
       </div>
 
       <div className="answer-color">
-        <p className="not-not-marked-answer-right-bar">{}</p>
+        <p className="not-not-marked-answer-right-bar">
+          {notAnsweredAndReviewedList.length}
+        </p>
         <p className="not-answer-marked-review-right-text">
           Not Answered & Marked for Review
         </p>
@@ -59,25 +119,15 @@ const RightBar = (props) => {
 
       <hr className="right-top-line" />
 
-      <div className="all-option-boxes">
-        <p className="options-right-nbr">01</p>
-        <p className="options-right-nbr">02</p>
-        <p className="options-right-nbr">03</p>
-        <p className="options-right-nbr">04</p>
-        <p className="options-right-nbr">04</p>
-        <p className="options-right-nbr">05</p>
-        <p className="options-right-nbr">06</p>
-        <p className="options-right-nbr">07</p>
-        <p className="options-right-nbr">08</p>
-        <p className="options-right-nbr">09</p>
-        <p className="options-right-nbr">10</p>
-        <p className="options-right-nbr">11</p>
-        <p className="options-right-nbr">12</p>
-        <p className="options-right-nbr">13</p>
-        <p className="options-right-nbr">14</p>
-        <p className="options-right-nbr">15</p>
-        <p className="options-right-nbr">16</p>
-      </div>
+      <ul className="all-option-boxes">
+        {answerSheetNumbersList.map((each) => (
+          <NumberItem
+            key={each.sheetId}
+            numberDetails={each}
+            singleItemDetailsForRightBar={singleItemDetailsForRightBar}
+          />
+        ))}
+      </ul>
     </div>
   )
 }

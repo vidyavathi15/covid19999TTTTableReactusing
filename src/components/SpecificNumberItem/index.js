@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
 
-import QuestionItem from '../QuestionItem'
+import SpecificNumberItemDetails from '../specificNumberItemDetails'
 
 import RightBar from '../RightBar'
 
@@ -124,11 +124,10 @@ const questionsList = [
   },
 ]
 
-class StartTest extends Component {
+class SpecificNumberItem extends Component {
   state = {
     multipleQuestionsList: questionsList,
 
-    currentQuestionId: questionsList[0].id,
     reviewsList: [],
     initialSeconds: 2,
     oneOptionSelected: 'option1',
@@ -169,12 +168,19 @@ class StartTest extends Component {
     this.initiateTimers()
   }
 
-  goToNextQuestion = () => {
+  /* goToNextQuestion = () => {
     const {
       initialSeconds,
-      currentQuestionId,
+
       multipleQuestionsList,
     } = this.state
+
+    const {match} = this.props
+    const {params} = match
+    const {sheetId} = params
+
+    const currentQuestionId = sheetId
+    console.log(currentQuestionId)
 
     if (
       initialSeconds <= 1 &&
@@ -182,7 +188,7 @@ class StartTest extends Component {
     ) {
       this.setState(
         (prevState) => ({
-          currentQuestionId: prevState.currentQuestionId + 1,
+          currentQiestionId: prevState.currentQuestionId + 1,
         }),
         this.callingTimerFunction(),
       )
@@ -190,7 +196,12 @@ class StartTest extends Component {
   }
 
   goToPreviousQuestion = () => {
-    const {initialSeconds, currentQuestionId} = this.state
+    const {initialSeconds} = this.state
+    const {match} = this.props
+    const {params} = match
+    const {sheetId} = params
+
+    const currentQuestionId = sheetId
     if (initialSeconds <= 1 && currentQuestionId > 1) {
       this.setState(
         (prevState) => ({
@@ -199,7 +210,7 @@ class StartTest extends Component {
         this.callingTimerFunction(),
       )
     }
-  }
+  } */
 
   oneOptionSelected = (option1) => {
     this.setState({oneOptionSelected: option1})
@@ -210,9 +221,7 @@ class StartTest extends Component {
   }
 
   threeOptionSelected = (option3) => {
-    this.setState({
-      oneOptionSelected: option3,
-    })
+    this.setState({oneOptionSelected: option3})
   }
 
   fourOptionSelected = (option4) => {
@@ -235,7 +244,6 @@ class StartTest extends Component {
               ...eachOption,
               isOptionClicked: !eachOption.isOptionClicked,
               reviewLater: false,
-              oneOptionSelected: '',
             }
           }
           return eachOption
@@ -245,7 +253,12 @@ class StartTest extends Component {
   }
 
   onChangeReviewCheckbox = () => {
-    const {multipleQuestionsList, currentQuestionId} = this.state
+    const {match} = this.props
+    const {params} = match
+    const {sheetId} = params
+
+    const currentQuestionId = sheetId
+    const {multipleQuestionsList} = this.state
 
     const singleQuestionItemOne = multipleQuestionsList[currentQuestionId - 1]
 
@@ -320,13 +333,19 @@ class StartTest extends Component {
   render() {
     const {
       multipleQuestionsList,
-      currentQuestionId,
+
       reviewsList,
       initialSeconds,
       oneOptionSelected,
     } = this.state
+    const {match} = this.props
+    const {params} = match
+    const {sheetId} = params
+
+    const currentQuestionId = sheetId
 
     const answeredList = this.getAnsweredList()
+
     /* const reviewedList = this.getReviewedList()
     console.log(reviewedList) */
 
@@ -341,6 +360,7 @@ class StartTest extends Component {
     )
 
     const singleQuestionItem = multipleQuestionsList[currentQuestionId - 1]
+    console.log(singleQuestionItem)
 
     return (
       <div className="start-test-bg-container">
@@ -348,13 +368,12 @@ class StartTest extends Component {
           <div className="name-test-container">
             <h1 className="test-rout-name">Egnify Grand Test</h1>
             <Link to="/result-page" className="link-text">
-              <button type="button" className="submit-btn">
+              <button
+                type="button"
+                className="submit-btn"
+                onClick={this.onClickSubmit}
+              >
                 Submit
-              </button>
-            </Link>
-            <Link to="/" className="link-text">
-              <button type="button" className="home-btn">
-                Home
               </button>
             </Link>
           </div>
@@ -374,7 +393,7 @@ class StartTest extends Component {
             </div>
           </div>
 
-          <QuestionItem
+          <SpecificNumberItemDetails
             questionDetails={singleQuestionItem}
             selectOption={this.selectOption}
             reviewLaterQuestion={this.reviewLaterQuestion}
@@ -406,4 +425,4 @@ class StartTest extends Component {
   }
 }
 
-export default StartTest
+export default SpecificNumberItem
