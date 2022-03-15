@@ -1,45 +1,69 @@
 import {Component} from 'react'
-
-import FinalResponse from '../FinalResponse'
-
 import './index.css'
 
 class FalConeResult extends Component {
-  state = {token: ''}
+  state = {finalResponse: ''}
 
   componentDidMount() {
-    this.getResultFalcone()
+    this.getResultFalconeFinalResponse()
   }
 
-  getResultFalcone = async () => {
-    const tokenUrl = 'https://findfalcone.herokuapp.com/token'
+  getResultFalconeFinalResponse = async () => {
+    const finalResponseUrl = 'https://findfalcone.herokuapp.com/find'
+    const {
+      planetName1,
+      planetName2,
+      planetName3,
+      planetName4,
+      originalToken,
+      isVesselSelectedId1,
+      isVesselSelectedId2,
+      isVesselSelectedId3,
+      isVesselSelectedId4,
+    } = this.props
 
-    const options = {
+    const planetNamesArray = [
+      planetName1,
+      planetName2,
+      planetName3,
+      planetName4,
+    ]
+    const vesselNamesArray = [
+      isVesselSelectedId1,
+      isVesselSelectedId2,
+      isVesselSelectedId3,
+      isVesselSelectedId4,
+    ]
+
+    const finalObject = {
+      originalToken,
+      planetNamesArray,
+      vesselNamesArray,
+    }
+
+    const finalOptions = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
+      body: JSON.stringify(finalObject),
     }
 
-    const response = await fetch(tokenUrl, options)
-    const tokenJson = await response.json()
+    const response = await fetch(finalResponseUrl, finalOptions)
+    const resultStatus = await response.json()
 
-    this.setState({token: tokenJson.token})
+    this.setState({
+      finalResponse: resultStatus,
+    })
   }
 
   render() {
-    const {token} = this.state
-    const {planetsList, sendingVesselsList} = this.props
-    console.log(token)
+    const {finalResponse} = this.state
+    console.log(finalResponse)
     return (
       <div className="result-container">
-        <p className="view-response">Success</p>
-        <FinalResponse
-          token={token}
-          planetsList={planetsList}
-          sendingVesselsList={sendingVesselsList}
-        />
+        <p className="view-response">{finalResponse}</p>
       </div>
     )
   }

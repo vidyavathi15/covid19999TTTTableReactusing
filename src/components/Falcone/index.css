@@ -1,4 +1,6 @@
 .flacone-container {
+  display: flex;
+  flex-direction: column;
 }
 .home-menu {
   display: Flex;
@@ -58,7 +60,6 @@
 }
 .total-drop-down-container {
   display: flex;
-  align-items: center;
 }
 .result-btn {
   background-color: transparent;
@@ -77,10 +78,51 @@
 .result-body {
   display: flex;
   flex-direction: column;
+}
+.link-text {
+  text-decoration: none;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+}
+.final-result-button-container {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 90px;
 }
-.link-text {
-  text-decoration: none;
+.result-btn {
+  background-color: transparent;
+  color: black;
+  font-size: 15px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  cursor: pointer;
+  height: 50px;
+  width: 150px;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 100px;
+}
+.radio-button-container {
+  display: flex;
+}
+.button-container {
+  display: flex;
+}
+.top-container {
+  display: flex;
+  flex-direction: column;
+}
+.vessels-list {
+  padding-left: 0px;
+  margin: 0px;
+}
+.button-alignment {
+  text-align: center;
 }
