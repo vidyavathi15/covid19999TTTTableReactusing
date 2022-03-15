@@ -1,0 +1,7 @@
+.vessel-item {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  width: 150px;
+}

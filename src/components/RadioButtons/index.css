@@ -1,0 +1,33 @@
+.vessels-list {
+  padding-left: 0px;
+  margin: 0px;
+  width: 190px;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+}
+.final-result-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+.result-btn {
+  background-color: transparent;
+  color: black;
+  font-size: 15px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  cursor: pointer;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.radio-button-container {
+  display: flex;
+  flex-direction: column;
+}
