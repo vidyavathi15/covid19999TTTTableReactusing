@@ -1,0 +1,29 @@
+.each-option {
+  display: flex;
+  height: 7vh;
+  color: #2e3b4c;
+  align-items: center;
+}
+
+.each-option:hover {
+  color: white;
+  background-color: #0d53fc;
+  padding: 10px;
+}
+
+p {
+  margin: 0;
+  margin-top: 2%;
+  margin-left: 18%;
+}
+
+.option-heading {
+  margin-left: 6%;
+  font-family: 'Roboto';
+  font-size: 15px;
+}
+.icon-color {
+  color: blue;
+  height: 30px;
+  width: 30px;
+}

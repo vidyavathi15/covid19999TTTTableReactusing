@@ -1,14 +1,14 @@
-import {Route, Switch} from 'react-router-dom'
-import Falcone from './components/Falcone'
-
-// import FinalResponse from './components/FinalResponse'
+import MainBody from './components/MainBody'
 
 import './App.css'
+import Sidebar from './components/Sidebar'
+// import Header from './components/Header'
 
 const App = () => (
-  <Switch>
-    <Route exact path="/" component={Falcone} />
-  </Switch>
+  <>
+    <Sidebar />
+    <MainBody />
+  </>
 )
 
 export default App
