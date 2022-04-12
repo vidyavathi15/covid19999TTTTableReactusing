@@ -1,31 +1,47 @@
-import {useRef, useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 import './index.css'
 
 const Counter = () => {
-  const data = useRef(null)
-
-  const onSubmitForm = (event) => {
-    event.preventDefault()
-    console.log(data.current.value)
-    data.current.value = 'vidya' // like this we can update a value
-    console.log(data.current.value)
-    console.log(data.current.value + 1) //  like this we can update a value
-  }
+  const [apiData, setApiData] = useState([])
 
   useEffect(() => {
-    data.current.focus()
-  }, [])
+    fetch('https://api.covid19india.org/data.json')
+      .then((res) => res.json())
+      .then((jsonData) => setApiData(jsonData))
+  })
 
   return (
     <div>
       <center>
-        <form onSubmit={onSubmitForm}>
-          <input ref={data} type="text" placeholder="Enter your Name" />
-          <br />
+        <h1 className="main-heading">Covid 19 Dashboard</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Confirmed</th>
+              <th>Active</th>
+              <th>Recovered</th>
+              <th>Deaths</th>
+              <th>LastUpdated</th>
+            </tr>
 
-          <input type="submit" />
-        </form>
+            <tbody>
+              {apiData.map((each, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{each.state}</td>
+                    <td>{each.confirmed}</td>
+                    <td>{each.active}</td>
+                    <td>{each.recovered}</td>
+                    <td>{each.deaths}</td>
+                    <td>{each.lastUpdatedTime}</td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </thead>
+        </table>
       </center>
     </div>
   )
