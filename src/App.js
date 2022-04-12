@@ -1,14 +1,5 @@
-import MainBody from './components/MainBody'
+import Counter from './components/Counter'
 
-import './App.css'
-import Sidebar from './components/Sidebar'
-// import Header from './components/Header'
-
-const App = () => (
-  <>
-    <Sidebar />
-    <MainBody />
-  </>
-)
+const App = () => <Counter />
 
 export default App

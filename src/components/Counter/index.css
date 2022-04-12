@@ -1,0 +1,60 @@
+.counter-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+}
+.counter-nbr {
+  color: black;
+}
+.counter-btn {
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-right: 20px;
+}
+.label-input {
+  color: black;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.input-feild {
+  outline: none;
+  border: 1px solid lightgrey;
+
+  padding: 10px;
+  color: black;
+  font-size: 15px;
+  font-family: 'Roboto';
+  width: 120px;
+}
+.submit-btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: blue;
+  color: white;
+  font-weight: 800;
+  margin-top: 20px;
+}
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+.error-msg {
+  color: red;
+}
